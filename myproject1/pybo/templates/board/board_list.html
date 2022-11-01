@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 목록</title>
+</head>
+<body>
+<!-- 게시글 목록 -->
+{% if board_list %}
+    <ul>
+    {% for board in board_list %}
+        <li><a href="/detail/{{ board.id }}/">{{ board.subject }}</a></li>
+        <li>{{ board.create_date }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>게시글이 없습니다.</p>
+{% endif %}
+</body>
+</html>
